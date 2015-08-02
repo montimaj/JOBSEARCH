@@ -9,7 +9,7 @@
 <body>
 <h1 align="center">Add Job 
 </h1>
-<form id="form3" name="form3" method="post" >
+<form id="form2" name="form2" method="post" >
   <p>JOB ID   
     <input type="text" name="id" id="id" />
   </p>
@@ -33,20 +33,20 @@
   <p>
       
     <input type="submit" name="save" id="save" value="SAVE" />
-     <input type="submit" name="post" id="post" value="POST" />
+    <input type="submit" name="post" id="post" value="POST" />    
   <% 
    if (request.getParameter("save") != null)
    {
-   %>
-    <jsp:forward page="jobsave.jsp"/> 
-	<% 
+   		%>
+    	<jsp:forward page="jobsave.jsp"/> 
+		<% 
     } 
    else if (request.getParameter("post") != null) 
    {
-    %>
-     <jsp:forward page="jobpost.jsp"/>      
-   	<% 
-   }
+    	%>
+     	<jsp:forward page="jobpost.jsp"/>      
+   		<% 
+   }   
   %>
 </form>
 </body>
