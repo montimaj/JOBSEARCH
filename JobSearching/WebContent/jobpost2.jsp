@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form name="form4" id="form4" method="post"></form>
+<form name="form4" id="form4" method="post">
  <p>
     <label for="companyname">COMPANY NAME</label>
     <input type="text" name="companyname" id="companyname">

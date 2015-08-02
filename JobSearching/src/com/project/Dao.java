@@ -64,7 +64,7 @@ public class Dao
 		}
 		catch(Exception e)
 		{
-				System.out.println(e.toString());
+				e.printStackTrace();
 		}
 		return i;
 	}
@@ -111,8 +111,33 @@ public class Dao
 		}
 		catch(Exception e)
 		{
-				System.out.println(e.toString());
+				e.printStackTrace();
 		}
 		return i;
-	}	
+	}
+	/**
+	 * Show saved jobs
+	 * @param query search criteria
+	 * @return ResultSet 
+	 */
+	public ResultSet showjobs(String query)
+	{
+		ResultSet rs=null;
+		try
+		{
+			Connection con=connect();
+			String x="\""+query+"\"";
+			String q="select companyname, postname, location, salary from jobfinder where ";
+			q+="instr(companyname,"+x+")!=0 ";
+			q+="or instr(postname,"+x+")!=0 ";
+			q+="or instr(location,"+x+")!=0 and flag=1";
+			Statement st=con.createStatement();
+			rs=st.executeQuery(q);			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return rs;
+	}
 }
