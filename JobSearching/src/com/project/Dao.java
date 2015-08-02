@@ -22,6 +22,15 @@ public class Dao
 			flag=rs.getInt("flag");			
 		return flag;
 	}
+	/**
+	 * Save and edit records
+	 * @param id Job id
+	 * @param companyname Company name	
+	 * @param postname Job post	
+	 * @param location Job location
+	 * @param salary 
+	 * @return String 
+	 */
 	public String save(String id,String companyname,String postname,String location,int salary)
 	{
 		String i=null;	
@@ -68,6 +77,15 @@ public class Dao
 		i=""+ps.executeUpdate();
 		return i;
 	}
+	/**
+	 * Permanently insert record to database
+	 * @param id
+	 * @param companyname
+	 * @param postname
+	 * @param location
+	 * @param salary
+	 * @return String
+	 */
 	public String post(String id,String companyname,String postname,String location,int salary)
 	{
 		String i=null;		
