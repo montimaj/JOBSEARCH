@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,12 +9,11 @@
 <body>
 <h1 align="center">Add Job 
 </h1>
-<form id="form2" name="form2" method="post" >
+<form id="form3" name="form3" method="post" >
   <p>JOB ID   
-    <input type="text" name="id" id="id" />
+    <input type="text" name="id" id="id" />   
   </p>
   <p>
-    <label for="Company name"></label>
     <label for="companyname">COMPANY NAME</label>
     <input type="text" name="companyname" id="companyname" />
   </p>
@@ -34,19 +33,26 @@
       
     <input type="submit" name="save" id="save" value="SAVE" />
     <input type="submit" name="post" id="post" value="POST" />    
-  <% 
-   if (request.getParameter("save") != null)
-   {
-   		%>
-    	<jsp:forward page="jobsave.jsp"/> 
-		<% 
-    } 
-   else if (request.getParameter("post") != null) 
-   {
-    	%>
-     	<jsp:forward page="jobpost.jsp"/>      
-   		<% 
-   }   
+    <input type="submit" name="postbyid" id="postbyid" value="POST BY ID" />    
+  <%
+  	if(request.getParameter("save")!=null)
+  	{
+  		%>
+  		<jsp:forward page="jobsave.jsp"></jsp:forward>
+  		<%
+  	}  	
+  	else if(request.getParameter("post")!=null)
+  	{
+  		%>
+  		<jsp:forward page="jobpost.jsp"></jsp:forward>
+  		<%
+  	}
+  	else if(request.getParameter("postbyid")!=null)
+  	{
+  		%>
+  		<jsp:forward page="postarea.jsp"></jsp:forward>
+  		<%
+  	}
   %>
 </form>
 </body>

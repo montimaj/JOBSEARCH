@@ -10,7 +10,7 @@
 <h1 align="center">JOB FINDER</h1>
 <p align="center">A Site for finding your best job</p>
 <h3 align="right"><a href="adminarea.jsp">Admin Area</a></h3>
-<h2 align="left"><a href="#">Search Job</a> </h2>
+<h2 align="left"><a href="JobSearch.jsp">Search Job</a> </h2>
 <h2><a href="#">About Us</a></h2>
 <h2><a href="#">Contact Us</a></h2>
 </body>

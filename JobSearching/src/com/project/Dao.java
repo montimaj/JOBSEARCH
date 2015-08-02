@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Dao
 {
-	private Connection connect() throws Exception
+	public Connection connect() throws Exception
 	{
 		Connection con=null;
 		Class.forName("com.mysql.jdbc.Driver");
