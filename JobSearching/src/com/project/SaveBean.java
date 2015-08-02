@@ -1,5 +1,6 @@
 package com.project;
 
+import java.sql.ResultSet;
 
 public class SaveBean {
 	private String id;
@@ -49,5 +50,10 @@ public class SaveBean {
 		Dao d=new Dao();
 		String p=d.post(id,companyname,postname,location,salary);
 		return p;
+	}
+	public ResultSet getSavedjobs()
+	{
+		Dao d=new Dao();
+		return d.showSavedjobs(id);
 	}
 }

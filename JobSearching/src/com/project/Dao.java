@@ -124,7 +124,7 @@ public class Dao
 	 * @param query search criteria
 	 * @return ResultSet 
 	 */
-	public ResultSet showjobs(String query)
+	public ResultSet showPostedjobs(String query)
 	{
 		ResultSet rs=null;
 		try
@@ -135,6 +135,27 @@ public class Dao
 			q+="instr(companyname,"+x+")!=0 ";
 			q+="or instr(postname,"+x+")!=0 ";
 			q+="or instr(location,"+x+")!=0 and flag=1";
+			Statement st=con.createStatement();
+			rs=st.executeQuery(q);			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	/**
+	 * Show saved jobs to admin
+	 * @param id Jobid
+	 * @return Resultset
+	 */
+	public ResultSet showSavedjobs(String id)
+	{
+		ResultSet rs=null;
+		try
+		{
+			Connection con=connect();			
+			String q="select companyname, postname, location, salary from jobfinder where flag=0 and id=\""+id+"\"";			
 			Statement st=con.createStatement();
 			rs=st.executeQuery(q);			
 		}

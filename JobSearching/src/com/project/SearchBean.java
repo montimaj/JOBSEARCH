@@ -17,6 +17,6 @@ public class SearchBean
 	public ResultSet getRecords()
 	{
 		Dao d=new Dao();
-		return d.showjobs(query);
+		return d.showPostedjobs(query);
 	}
 }

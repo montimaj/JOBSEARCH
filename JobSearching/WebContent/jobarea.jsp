@@ -33,7 +33,7 @@
       
     <input type="submit" name="save" id="save" value="SAVE" />
     <input type="submit" name="post" id="post" value="POST" />    
-    <input type="submit" name="postbyid" id="postbyid" value="POST BY ID" />    
+    <input type="submit" name="postbyid" id="postbyid" value="Edit Saved Jobs" />    
   <%
   	if(request.getParameter("save")!=null)
   	{
@@ -50,7 +50,7 @@
   	else if(request.getParameter("postbyid")!=null)
   	{
   		%>
-  		<jsp:forward page="postarea.jsp"></jsp:forward>
+  		<jsp:forward page="jobpostbyid.jsp"></jsp:forward>
   		<%
   	}
   %>

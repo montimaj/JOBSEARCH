@@ -7,17 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="jobfinder" class="com.project.SaveBean">
-<jsp:setProperty name="jobfinder" property="id"/>
-</jsp:useBean>
-<%
-Class.forName("com.mysql.jdbc.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobs","root","Montimaj535");
-String q="select companyname, postname, location, salary from jobfinder where ";
-%>
-<form id="form2" name="form2" method="get" action="jobpost2.jsp">
+<form id="form2" name="form2" method="post" action="jobpost2.jsp">
   <p>JOB ID   
-    <input type="text" name="id" id="jobid" value=<%request.getParameter("id"); %>/>
+    <input type="text" name="id" id="id"/>
     <input type="submit" name="postbyid" id="postbyid" value="Get Saved Records">;
   </p>
   </form> 
