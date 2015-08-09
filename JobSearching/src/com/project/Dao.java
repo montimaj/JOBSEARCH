@@ -132,9 +132,9 @@ public class Dao
 			Connection con=connect();
 			String x="\""+query+"\"";
 			String q="select companyname, postname, location, salary from jobfinder where ";
-			q+="instr(companyname,"+x+")!=0 ";
+			q+="(instr(companyname,"+x+")!=0 ";
 			q+="or instr(postname,"+x+")!=0 ";
-			q+="or instr(location,"+x+")!=0 and flag=1";
+			q+="or instr(location,"+x+")!=0) and flag=1";
 			Statement st=con.createStatement();
 			rs=st.executeQuery(q);			
 		}
